@@ -9,7 +9,7 @@ This script run to scale images into different screen sizes of android.
 
 OPTIONS:
    -h      Show this message
-   -p      Project path
+   -p      Project path (Default is `pwd`)
    -i      input image path
    -s      scale size on XHDPI. Others will be calculated
    -o      out put image file name. This will be created in the place where it should be in android project 
@@ -60,7 +60,7 @@ fi
 
 if [ -f "$PROJ_HOME/AndroidManifest.xml" ]
 then echo "Ok.."
-else echo 'Please run me inside android project base directory' 
+else echo 'Please run me inside android project base directory. Or use -p option to specify' 
     exit 1;
 fi
 
@@ -69,7 +69,7 @@ echo 'Running'
 in="ColorMap.png"
 outname="out2.png" 
 
-XHDPI="400"
+XHDPI="$SIZE"
 
 HDPI=`bc -l <<< "$XHDPI * (6/8.0)"`
 MDPI=`bc -l <<< "$XHDPI * (4/8.0)"`
