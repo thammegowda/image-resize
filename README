@@ -1,0 +1,12 @@
+Image resizer script
+This script resize given input image to different screen sizes of Image
+
+Dependancies: 
+1) Image magick
+
+
+To run:
+   read help message by invoking
+   ./con.sh -h
+
+    
